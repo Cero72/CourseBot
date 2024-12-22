@@ -1,0 +1,333 @@
+question,answer,base,finetuned
+"What is the primary distinction between machine learning and traditional statistics in terms of their end goals?
+A) ML focuses on model interpretability while statistics focuses on predictions
+B) ML emphasizes making predictions and decisions while statistics aims to find well-fitting models
+C) Statistics deals with small datasets while ML handles only big data
+D) ML is purely theoretical while statistics is application-oriented",B,C,B
+"Which of the following best describes a key characteristic of regression problems?
+A) The target values must be discrete and finite
+B) The output values are real numbers
+C) The input data must be one-dimensional
+D) The training data doesn't require paired examples",B,C,C
+"Which of the following tasks would a data scientist use when trying to visualize patterns in high-dimensional customer purchase data?
+A) Classification
+B) Density Estimation
+C) Dimensionality Reduction
+D) Sequence Learning",C,C,C
+"Which learning approach would be most suitable when you have access to a large dataset of unlabeled images but want to minimize the cost of human annotation?
+A) Reinforcement Learning
+B) Active Learning
+C) Semi-supervised Learning
+D) Transfer Learning","B
+
+The correct answer is B) Active Learning because active learning is specifically designed for scenarios where obtaining labels is expensive (like having humans annotate images), and the algorithm selectively chooses which instances to get labeled to maximize learning while minimizing labeling costs. While semi-supervised learning could also use unlabeled data, active learning would be more efficient in minimizing human annotation costs through strategic selection of instances to label.",C,C
+"What is the key distinction between parametric and non-parametric machine learning approaches?
+A) Parametric models require data preprocessing, while non-parametric models don't
+B) Non-parametric models make predictions directly from training data without learning parameters, while parametric models fit a model with parameters first
+C) Parametric models are always more accurate than non-parametric models
+D) Non-parametric models can only be used for classification tasks, while parametric models work for both classification and regression",B,C,B
+"What describes the primary challenge when using training error as the sole criterion for model selection?
+A) Training error is computationally expensive to calculate
+B) Training error may lead to overfitting and poor generalization
+C) Training error requires knowledge of the underlying data distribution
+D) Training error cannot be used with parameterized models",B,C,B
+"What best describes the process of handling non-numerical real-world inputs in machine learning models?
+A) Converting inputs directly into predictions
+B) Using a feature function φ to transform inputs into real-valued vectors
+C) Limiting inputs to only numerical data
+D) Randomly assigning vector values to inputs","B
+
+The correct answer is B because the text explicitly mentions that real-life inputs (like songs, images, or people) need to be transformed using a feature function φ(x) that maps these inputs into real-valued vectors in ℝᵈ before they can be processed by the hypothesis function h. This is a fundamental step in preparing real-world data for machine learning models.",B,B
+"What is the primary purpose of comparing training error and test error in machine learning models?
+
+A) To determine the computational efficiency of the model
+B) To evaluate how well the model performs on seen vs. unseen data
+C) To calculate the optimal number of training iterations
+D) To measure the speed of model convergence","B
+
+The correct answer is B: To evaluate how well the model performs on seen vs. unseen data.
+
+This can be verified from the text which explains that while training error shows how well the model fits the training data, what we truly care about is the test error on new examples. The comparison between these errors helps us understand if the model generalizes well to new, unseen data, which is the ultimate goal in machine learning. The text specifically states ""What we most care about is test error"" and emphasizes the importance of making ""good predictions on examples it hasn't seen.""",C,B
+"Which of the following best describes the purpose of including a regularizer term in a machine learning objective function?
+
+A) To minimize the prediction errors on training data only
+B) To ensure the model performs equally well on all types of data
+C) To balance between fitting training data and maintaining generalization ability
+D) To maximize the complexity of the model for better accuracy","C
+
+The correct answer is C because according to the text, the regularizer term (λR(Θ)) is specifically added to ""encourage the prediction to remain general,"" and λ helps balance between ""reproducing seen examples, and being able to generalize to unseen examples."" This directly maps to the concept of balancing between fitting training data and maintaining generalization ability.",C,C
+"What is the primary advantage of using squared loss in linear regression?
+A) It penalizes negative errors more heavily than positive errors
+B) It treats positive and negative prediction errors equally
+C) It works best with non-Gaussian noise distributions
+D) It only penalizes errors above a certain threshold",B,C,B
+"When using matrix operations to solve for the optimal parameters in linear regression, what is the primary advantage of expressing the gradient as a column vector?
+A) It makes the calculations more complicated
+B) It allows for easier differentiation of individual elements
+C) It enables compact representation and efficient matrix operations
+D) It requires more memory storage than calculating derivatives separately","C
+
+The answer is C because expressing the gradient as a column vector enables a more compact and efficient way to handle multiple partial derivatives simultaneously in matrix operations, which is particularly useful when solving for optimal parameters in linear regression using the ordinary least squares method. This matrix-based approach simplifies the mathematical manipulation compared to solving individual equations for each parameter separately.",C,C
+"When solving for the optimal parameters in linear regression using the normal equation, which matrix operation is crucial to ensure the solution exists?
+A) Matrix addition of X transpose and Y
+B) Matrix multiplication of X and its transpose
+C) Matrix inversion of (X^T X)
+D) Matrix determinant of X","C
+
+The correct answer is C because the normal equation solution θ = (X^T X)^{-1}X^T Y requires the inverse of (X^T X) to exist. This matrix inversion operation is crucial for finding the optimal parameters. Without a valid inverse of (X^T X), the closed-form solution cannot be computed, which could happen if the matrix is singular or ill-conditioned. This is a fundamental concept in linear regression when using the normal equation method.",C,C
+"What is the primary reason for using regularization in machine learning models?
+A) To increase the training loss
+B) To achieve perfect fit on training data
+C) To help the model generalize better to unseen data
+D) To make computations faster","C
+
+The correct answer is C because the text explicitly states that ""our ultimate goal is to perform well on input values that we haven't trained on"" and regularization helps achieve this by expressing preferences over hypotheses within a hypothesis class. It helps prevent overfitting by enforcing ""underlying regularity"" between training and testing data. Additionally, regularization helps handle cases where features are correlated, leading to more stable models.",C,C
+"What is the primary purpose of adding the regularization term λ||θ||² in ridge regression?
+A) To make the computation faster
+B) To ensure the model perfectly fits all training points
+C) To prevent overfitting and control the magnitude of model parameters
+D) To guarantee that X^TX is always invertible","C
+
+The correct answer is C because ridge regression's regularization term λ||θ||² helps prevent overfitting by penalizing large parameter values. As mentioned in the text, larger λ values pressure θ values to be near zero, which provides a way to control the trade-off between fitting the training data and maintaining simpler, more generalizable models. This addresses both the problem of non-invertible X^TX and overfitting simultaneously.",C,D
+"What is the primary reason for having separate training and test error measurements in machine learning?
+A) To compare different machine learning algorithms
+B) To measure the computational efficiency of the model
+C) To evaluate the model's performance on unseen data and avoid overfitting
+D) To determine the optimal learning rate for gradient descent",C,C,C
+"What is the primary purpose of using validation in evaluating machine learning algorithms?
+
+A) To speed up the training process
+B) To determine the optimal number of features
+C) To assess algorithm performance on data independent from training
+D) To reduce memory requirements during training","C
+
+The correct answer is C) To assess algorithm performance on data independent from training.
+
+Explanation: According to the text, validation is used to evaluate how well a learning algorithm works by training on one set of data and then evaluating the resulting hypothesis h on a separate validation set that doesn't overlap with the training data. This process helps control for potential issues like poor choices of training sets or algorithmic randomization, ultimately giving a more reliable measure of the algorithm's true performance.",C,C
+"When evaluating different machine learning approaches, what does cross-validation primarily assess?
+A) The performance of a specific hypothesis
+B) The effectiveness of the learning algorithm itself
+C) The quality of individual data points
+D) The size of the validation set","B
+
+The correct answer is B because the given text explicitly states that ""It's very important to understand that (cross-)validation neither delivers nor evaluates a single particular hypothesis h. It evaluates the learning algorithm that produces hypotheses."" Cross-validation is a method to assess how the learning algorithm performs across different subsets of data, not just a single hypothesis or specific data points.",A,B
+"Which stopping criterion would be most reliable for gradient descent when the objective function has multiple local minima?
+
+A) Stopping after a fixed number of iterations T
+B) Stopping when the change in parameter value is less than epsilon
+C) Stopping when the derivative at current theta is less than epsilon
+D) Stopping when the change in function value is less than epsilon","C
+
+The correct answer is C because when the derivative approaches zero, it indicates we've reached a local minimum (or maximum) point, regardless of whether it's the global optimum. Other criteria like fixed iterations (A) might stop prematurely, while changes in parameter values (B) or function values (D) might be small even when we're moving along a plateau and haven't reached a minimum.",C,D
+"What happens when gradient descent is applied to a non-convex function?
+
+A) It always converges to a global minimum regardless of the starting point
+B) It always converges to the nearest local minimum
+C) It may converge to a point where the gradient is zero but is not necessarily a minimum
+D) It never converges and always oscillates around multiple minima","C
+
+The correct answer is C because the text specifically states that for non-convex functions, gradient descent is expected to converge to a point where the gradient is zero, but cannot guarantee convergence to a global minimum. The text also provides an example with f(x) = x³ where gradient descent converges to a point that is neither a local minimum nor maximum but has zero gradient. This makes C the most accurate choice among the given options.",D,C
+"What is the main difference in handling the bias term (θ₀) between ordinary least squares and ridge regression?
+A) In ridge regression, θ₀ must be handled separately from θ, while in OLS they can be combined
+B) OLS requires separate handling of θ₀, while ridge regression combines it with θ
+C) Both OLS and ridge regression handle θ₀ separately
+D) Neither OLS nor ridge regression distinguish between θ₀ and θ","A
+
+The correct answer is A because the content explicitly states that ""in ordinary least squares, we finessed handling θ₀ by adding an extra dimension of all 1's. In ridge regression, we really do need to separate the parameter vector θ from the offset θ₀."" This fundamental difference is due to the regularization term in ridge regression, which only applies to θ but not θ₀.",A,A
+"What is the primary advantage of using stochastic gradient descent over traditional gradient descent?
+A) It always converges to the global minimum
+B) It uses less memory since it processes one data point at a time 
+C) It requires more iterations to converge
+D) It must process the entire dataset before making parameter updates","B
+
+The correct answer is B because stochastic gradient descent (SGD) processes one randomly selected data point at a time, making it memory efficient compared to traditional gradient descent which requires computing gradients over the entire dataset. This is particularly advantageous when dealing with large datasets. While SGD may require more iterations to converge (option C), and doesn't guarantee finding the global minimum (option A), its memory efficiency is its key advantage. Option D is incorrect since SGD's defining characteristic is that it updates parameters using individual data points rather than waiting for the entire dataset.",B,B
+"What is a key advantage of using a decreasing step size sequence in Stochastic Gradient Descent?
+A) It allows for faster convergence to global optima in all cases
+B) It balances exploration in early stages while ensuring convergence in later stages
+C) It eliminates the need for randomization in gradient selection
+D) It guarantees convergence regardless of the initial parameters","B
+
+The correct answer is B because the decreasing step size sequence (η(t)) serves a dual purpose: initially allowing for wider exploration of the parameter space (through the condition Ση(t) = ∞), while gradually reducing step sizes (through the condition Σ(η(t))² < ∞) to ensure convergence to an optimal point. This balance between exploration and convergence is crucial for SGD's effectiveness.",C,B
+"What is the key difference between the evaluation metrics used for classification and regression tasks?
+
+A) Classification always uses mean squared error while regression uses 0-1 loss
+B) Classification commonly uses 0-1 loss that counts misclassifications, while regression typically uses continuous error measures
+C) Both classification and regression must use the same error metrics to be comparable
+D) Classification error can only be measured on training data, not test data","B
+
+The correct answer is B because the content explains that classification often uses 0-1 loss which simply counts whether predictions are correct (1) or incorrect (0), unlike regression which typically uses continuous error measures like MSE. This is evidenced by the formulas shown for both training and test error that use the binary counting approach.",C,B
+"What does the normal vector θ indicate in relation to a linear classifier?
+A) It points parallel to the decision boundary
+B) It points perpendicular to the decision boundary
+C) It has no geometric relationship to the decision boundary
+D) It represents the angle between two classes","B
+
+The correct answer is B because according to the text, ""We can interpret θ as a vector that is perpendicular to the separator."" The normal vector θ mathematically defines the orientation of the decision boundary by being perpendicular (at right angles) to it. This property is fundamental to how linear classifiers separate the feature space into two regions.",B,B
+"Why is optimizing a linear classifier using 0-1 loss function computationally challenging?
+A) The optimization problem requires complex matrix operations
+B) The loss function is discontinuous and non-smooth, making it hard to determine parameter improvements
+C) The computational time is always linear with the number of training examples
+D) The classifier can only make binary predictions of +1 or -1","B
+
+The correct answer is B because the text explicitly states that the lack of ""smoothness"" makes optimization difficult. When two hypotheses have the same number of misclassifications, they have the same J value despite potentially different distances from optimal parameters, making it hard to determine which direction to adjust parameters for improvement. The categorical nature of predictions and inability to express certainty degrees further compounds this challenge.
+
+Option A is incorrect as matrix operations aren't mentioned as a challenge. Option C is wrong because the text mentions the computation time is likely exponential, not linear. Option D states a characteristic of binary classification but isn't the reason for optimization difficulty.",C,B
+"What is a key characteristic of the sigmoid function that makes it suitable for probability-based predictions?
+A) It always outputs values between -1 and +1
+B) It always outputs values between 0 and 1
+C) It always outputs values greater than 1
+D) It always outputs negative values","B
+
+The correct answer is B because the sigmoid function σ(z) = 1/(1 + e^(-z)) always outputs values in the interval (0,1), making it suitable for representing probabilities. This is explicitly mentioned in the text and is a fundamental property that makes it useful for linear logistic classifiers.",B,B
+"What is the primary advantage of using negative log-likelihood (NLL) as a loss function in classification problems?
+A) It simplifies the computation of gradients during optimization
+B) It naturally extends to multi-class classification scenarios
+C) It always produces loss values between 0 and 1
+D) It forces the model parameters to be non-negative","B
+
+The correct answer is B because the text explicitly states that NLL ""has the cool property that it extends nicely to the case where we would like to classify our inputs into more than two classes."" The other options, while plausible, are not mentioned in the given text as advantages of NLL.",C,B
+"What is the primary purpose of the regularization term (2λθ) in the gradient computation for logistic regression?
+A) To speed up the convergence of gradient descent
+B) To ensure the loss function is differentiable
+C) To prevent overfitting by controlling parameter magnitudes
+D) To normalize the input features","C
+
+Explanation: In logistic regression, the regularization term (2λθ) plays a crucial role in preventing overfitting by penalizing large parameter values. The parameter λ controls the trade-off between minimizing the loss function and keeping the model parameters small, which helps the model generalize better to unseen data. This matches with the content's explanation that ""Regularization is needed for building classifiers that can generalize well.""",C,C
+"What property ensures that gradient descent will find the global minimum in logistic regression's negative log-likelihood loss function?
+A) The second derivative is always positive
+B) The first derivative is monotonically increasing
+C) The sigmoid function is bounded between 0 and 1
+D) The loss function has multiple local minima","B
+
+The correct answer is B because the text explicitly states that the derivatives of both f₁(z) and f₂(z) are monotonically increasing functions, which proves the convexity of the NLL loss function. This property ensures that gradient descent will converge to the global minimum. The monotonically increasing first derivative is what defines a convex function and guarantees convergence to the optimal solution.",C,C
+"What is the primary purpose of using the softmax function in multi-class classification?
+A) To convert input features into binary values
+B) To normalize input vectors to unit length
+C) To transform arbitrary real-valued vectors into probability distributions
+D) To reduce the dimensionality of the input space","C
+
+The correct answer is C. The softmax function takes a vector z ∈ ℝᴷ and converts it into a probability distribution over K classes, where each element is non-negative and the sum of all elements equals 1. This transformation is essential for interpreting the model's output as class probabilities in multi-class classification problems.",C,C
+"What is a key benefit of applying non-linear feature transformations to input data?
+A) It reduces computational complexity
+B) It eliminates the need for validation
+C) It allows linear models to capture non-linear patterns
+D) It decreases the number of required training examples","C
+
+The correct answer is C because the text explicitly states that performing non-linear feature transformations (φ(x)) before regression allows us to obtain ""a richer class of hypotheses"" and can help capture non-linear behavior that ""cannot immediately be captured by linear models."" The example given with φ(x) = [x, x²]ᵀ demonstrates how a linear separator in the transformed space can effectively create a non-linear separator in the original space, enabling the model to handle more complex patterns.",C,C
+"When transforming input features to better represent patterns in data, which approach uses exponential decay based on distance from reference points?
+A) Polynomial basis transformation
+B) Linear basis mapping
+C) Radial basis functions
+D) Logarithmic basis functions","C
+
+The correct answer is C) Radial basis functions because they use the formula $f_p(x) = e^{-\beta\|p-x\|^2}$ which creates features based on exponential decay of distance between points x and reference points p. Polynomial basis uses products of input dimensions, linear basis would use simple linear combinations, and logarithmic basis is not mentioned in the text.",C,C
+"When working with categorical variables in a machine learning model, which encoding method uses a series of binary variables where each subsequent value includes all previous ones set to 1?
+A) One-hot encoding
+B) Binary encoding
+C) Thermometer encoding
+D) Numeric encoding","C
+
+The correct answer is C) Thermometer encoding. In thermometer encoding, for ordered values 1,...,k, a vector of length k binary variables is used where each value includes all previous positions set to 1. For example, a value of 3 in a 5-scale system would be encoded as [1,1,1,0,0]. This differs from one-hot encoding (which uses only a single 1), binary encoding (which uses binary representation), and numeric encoding (which assigns scaled numeric values).",C,C
+"What correctly describes the basic computational operation in a neural network's single layer?
+A) The output is computed as a linear combination of inputs multiplied by a bias term
+B) The activation is calculated as f(W^TX + W_0), where f is a non-linear function applied to the weighted sum plus bias
+C) The output is simply the dot product of weights and inputs
+D) The activation is computed by multiplying the input matrix with a bias vector","B
+
+The correct answer is B because in a single layer neural network, the output activation A is computed as f(W^TX + W_0), where f is a non-linear activation function applied to the weighted sum of inputs (W^TX) plus a bias term (W_0). This is explicitly stated in the text and represents the fundamental computation in a neural network layer.
+
+Options A and C are incorrect as they miss the crucial non-linear activation function. Option D is incorrect as it misrepresents the computation by suggesting only a matrix multiplication with bias.",B,B
+"What would happen in a neural network if all activation functions were replaced with the identity function (f(x) = x)?
+A) The network would still maintain its non-linear modeling capabilities
+B) The network would reduce to a single linear transformation equivalent to multiplying all weight matrices
+C) The network would require more hidden layers to compensate
+D) The network would perform better on regression tasks","B
+
+The correct answer is B because when all activation functions are the identity function, the network's output becomes A^L = W_L^T W_{L-1}^T ⋯ W_1^T X, which is equivalent to a single linear transformation W_total X. This means the multiple layers collapse into one linear operation, losing the network's ability to model non-linear relationships regardless of how many layers are used.",C,C
+"Which activation function would be most appropriate for a neural network's final layer if the task is to classify images into exactly one of several categories?
+A) Sigmoid function
+B) Linear function
+C) Softmax function
+D) Hyperbolic tangent function","C
+
+The answer is C because the softmax function is specifically designed for multi-class classification tasks. It outputs a probability distribution over all possible classes (summing to 1), ensuring that each image is assigned probabilities for belonging to each category, with the highest probability indicating the predicted class. This matches with the content showing that softmax is paired with NLLM loss for multi-class classification tasks.",C,C
+"What is the key component in computing the gradient of the loss with respect to weights in a neural network layer?
+A) Using rectified linear units (ReLU) as activation functions
+B) Breaking down matrix equations into scalar components and applying chain rule
+C) Multiplying all weight matrices in reverse order
+D) Computing only the final layer derivatives","B
+
+The correct answer is B. The text emphasizes that ""The key trick is to break every equation down to its scalar meaning"" when deriving gradients. This is demonstrated in equation (6.7) where the partial derivative of loss with respect to a weight element is broken down into scalar components using the chain rule. This approach allows for precise computation of gradients in matrix-based neural network calculations.",C,B
+"What is the primary purpose of computing partial derivatives with respect to weights during neural network training?
+A) To determine the optimal number of hidden layers
+B) To calculate how much each weight contributes to the overall loss
+C) To normalize the input data
+D) To initialize the weights randomly","B
+
+The correct answer is B because the partial derivatives ∂loss/∂W calculate how much each weight contributes to the overall loss, which is essential for updating weights during backpropagation. This is shown in equation 6.8 where ∂loss/∂W_{i,j}^l determines how much each weight affects the loss function, allowing the network to adjust weights accordingly during training to minimize the loss.",B,B
+"Why is it crucial to initialize neural network weights with small random values rather than all zeros?
+A) To ensure faster convergence of the network during training
+B) To prevent all neurons from learning the same features and break symmetry
+C) To avoid saturation of activation functions in deep layers
+D) All of the above","D
+
+The answer is D because:
+1. Small random initialization helps prevent symmetry issues where all neurons would learn the same features if initialized with identical values
+2. It helps avoid activation function saturation which can slow down or stop learning
+3. Proper initialization with small random values leads to better convergence during training
+All these aspects are mentioned in the content as key considerations for weight initialization, making D (All of the above) the correct comprehensive answer.",C,D
+"When training neural networks, which of the following represents an effective strategy to prevent overfitting?
+A) Increasing the learning rate exponentially during training
+B) Maximizing the gradient values during backpropagation
+C) Early stopping based on validation set performance
+D) Removing all activation functions to simplify the model","C
+
+The correct answer is C) Early stopping based on validation set performance.
+
+Early stopping is a regularization technique mentioned in the text that helps prevent overfitting by monitoring the model's performance on a validation set during training. When the validation loss starts to increase while training loss continues to decrease, it indicates overfitting, and training should be stopped. This is more effective than options A and B, which could lead to training instability, while D would severely limit the network's ability to learn non-linear patterns.",C,C
+"Which technique randomly deactivates neurons during training to prevent overfitting while requiring weight adjustments during prediction?
+A) Batch normalization
+B) Mini-batch gradient descent
+C) Dropout
+D) Weight decay",C,C,C
+"Which characteristic best describes why we don't need to analyze pixels from distant corners of an image when detecting local features?
+A) Translation invariance
+B) Spatial locality
+C) Filter dimensionality
+D) RGB channel separation",B,C,B
+"When applying multiple filters to an image in a convolutional neural network, what happens to the dimensionality of the output?
+A) The output becomes a 1D vector
+B) The output maintains the same dimensions as the input image
+C) The output becomes a 3D tensor with depth equal to the number of filters
+D) The output reduces in size based on the number of filters",C,C,C
+"When computing gradients for a neural network with a convolutional layer followed by ReLU activation, which component ensures that updates only occur for activated neurons?
+
+A) The partial derivative of Z¹ with respect to W¹
+B) The diagonal matrix where elements are 1 for positive inputs and 0 otherwise
+C) The transpose of the weight matrix W²
+D) The squared loss function derivative",B,C,B
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
